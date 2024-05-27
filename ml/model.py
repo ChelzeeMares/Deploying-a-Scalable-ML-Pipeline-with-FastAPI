@@ -3,7 +3,7 @@ from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.data import process_data
 from sklearn.linear_model import LogisticRegression
 import numpy as np
-
+import os
 # TODO: add necessary import
 
 # Optional: implement hyperparameter tuning.
