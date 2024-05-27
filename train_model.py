@@ -14,7 +14,7 @@ from ml.model import (
 )
 # Load census.csv data
 # DONE
-project_path = "Your path here"
+project_path = "Deploying-a-Scalable-ML-Pipeline-with-FastAPI/data/"
 data_path = os.path.join(project_path, "data", "census.csv")
 print(data_path)
 data = pd.read_csv('census.csv')
