@@ -39,6 +39,7 @@ cat_features = [
 # DONE
 X_train, y_train, encoder, lb = process_data(
     train,
+    label=  None
     categorical_features=cat_features,
     training= True
     )
