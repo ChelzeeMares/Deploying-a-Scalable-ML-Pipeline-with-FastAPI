@@ -84,6 +84,7 @@ def save_model(model, path):
         
     DONE
     """
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, 'wb') as file:
         pickle.dump(model, file)
     pass
