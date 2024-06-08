@@ -26,10 +26,10 @@ class Data(BaseModel):
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
     native_country: str = Field(..., example="United-States", alias="native-country")
 
-path = encoder_path
+path = 'train_model.py'
 encoder = load_model(path)
 
-path = model_path
+path = 'train_model.py'
 model = load_model(path)
 
 # create a RESTful API using FastAPI
