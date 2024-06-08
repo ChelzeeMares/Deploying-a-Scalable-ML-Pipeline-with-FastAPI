@@ -20,7 +20,7 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 >
 > 32,561 entries with 15 different categories as taken from census.csv
 >
-> Function process_data preprocesses the data by using one hot encoding for the categorical information \n
+> Function process_data preprocesses the data by using one hot encoding for the categorical information
 > and label binarizeration for the labels
 > 
 
