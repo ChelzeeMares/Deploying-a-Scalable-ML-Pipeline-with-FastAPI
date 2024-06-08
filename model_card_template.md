@@ -32,7 +32,7 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 >
 > 32,561 entries with 15 different categories as taken from census.csv
 >
-> 
+> Test data uses
 >
 >  Function process_data preprocesses the data by using one hot encoding for the categorical information
 > and label binarizeration for the labels
@@ -51,6 +51,25 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 >
 > education: Bachelors, Count: 1,053
 >Precision: 0.7285 | Recall: 0.2699 | F1: 0.3939
+>
+> marital-status: Married-civ-spouse, Count: 2,950
+>Precision: 0.7285 | Recall: 0.2699 | F1: 0.3939
+>
+> occupation: Other-service, Count: 667
+Precision: 0.7285 | Recall: 0.2699 | F1: 0.3939
+>
+> relationship: Wife, Count: 322
+Precision: 0.7285 | Recall: 0.2699 | F1: 0.3939
+>
+> race: White, Count: 5,595
+>Precision: 0.7285 | Recall: 0.2699 | F1: 0.3939
+>
+> sex: Female, Count: 2,126
+>Precision: 0.7285 | Recall: 0.2699 | F1: 0.3939
+>
+> native-country: United-States, Count: 5,870
+>Precision: 0.7285 | Recall: 0.2699 | F1: 0.3939
+
 
 ## Ethical Considerations
 
@@ -59,11 +78,12 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 > Make sure that none of the data includes any personal data.
 >
 > If bias is shown with certain groups, action might be taken that is unjust.
->
 
 ## Caveats and Recommendations
 
 > The data should be high-quality and if it is not, the model performance may suffer.
+>
+> Incomplete data can show an imcomplete picture.
 >
 > Each scenario is different and bias created from the model might not take those scenarios into consideration.
 >
