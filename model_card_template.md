@@ -12,8 +12,17 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 
 ## Intended Use
 
+> To classify individuals based on the Census Bureau data that is publicly available
 
 ## Training Data
+
+> Sourced from the Census Bureau
+>
+> 32,561 entries with 15 different categories as taken from census.csv
+>
+> Function process_data preprocesses the data by using one hot encoding for the categorical information \n
+> and label binarizeration for the labels
+> 
 
 ## Evaluation Data
 
