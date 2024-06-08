@@ -5,7 +5,9 @@ For additional information see the Model Card paper: https://arxiv.org/pdf/1810.
 ## Model Details
 
 > Chelzee Mares
+>
 > Machine Learning Model with FastAPI
+> 
 > Programming Language: Python
 
 ## Intended Use
