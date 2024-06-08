@@ -37,6 +37,6 @@ r = requests.post(url, json=data)
 
 
 # print the status code
-print(f"Status Code: {r.status_code}")
+print("Status Code:", r.status_code)
 # print the result
-print(f"Response: {r.json()}")
+print("Response:", r.json())
