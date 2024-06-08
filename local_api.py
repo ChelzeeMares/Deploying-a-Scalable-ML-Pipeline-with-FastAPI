@@ -1,7 +1,6 @@
 import json
 
 import requests
-from pydantic import BaseModel
 
 
 # send a GET using the URL http://127.0.0.1:8000
@@ -33,11 +32,8 @@ data = {
 }
 
 # send a POST using the data above
-
-@app.post("/data/")
-async def post_inference(data: Data):
-    # Your model inference logic here
-    return {"status_code": "json"}
+url = 'http://127.0.0.1:8000/data/'
+r = requests.post(url, json=data)
 
 
 # print the status code
