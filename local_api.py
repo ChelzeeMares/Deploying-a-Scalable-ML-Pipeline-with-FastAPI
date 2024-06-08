@@ -8,7 +8,7 @@ r = requests.get(url)
 
 # print the status code
 print(f"Status Code: {r.status_code}")
-print the welcome message
+print('Hello and Welcome!') 
 print(f"Response: {r.json()}")
 
 
