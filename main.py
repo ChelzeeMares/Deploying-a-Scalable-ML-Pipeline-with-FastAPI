@@ -32,14 +32,14 @@ encoder = load_model(path)
 path = 'model.pkl'
 model = load_model(path)
 
-# TODO: create a RESTful API using FastAPI
+# create a RESTful API using FastAPI
 app = FastAPI()
 
-# TODO: create a GET on the root giving a welcome message
+# create a GET on the root giving a welcome message
 @app.get("/")
 async def get_root():
     """ Say hello!"""
-    # your code here
+    return {"message": "Hello!!"}
     pass
 
 
@@ -65,10 +65,9 @@ async def post_inference(data: Data):
         "native-country",
     ]
     data_processed, _, _, _ = process_data(
-        # your code here
-        # use data as data input
-        # use training = False
-        # do not need to pass lb as input
+        data,
+        categorical_features=cat_features,
+        training=False
     )
-    _inference = # your code here to predict the result using data_processed
+    _inference = model.predict(data_processed)
     return {"result": apply_label(_inference)}
