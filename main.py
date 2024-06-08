@@ -26,6 +26,8 @@ class Data(BaseModel):
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
     native_country: str = Field(..., example="United-States", alias="native-country")
 
+project_path = "Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
+
 path = os.path.join(project_path, "model", "encoder.pkl")
 encoder = load_model(path)
 
