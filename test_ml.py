@@ -13,13 +13,10 @@ def test_one():
     # add description for the first test
     """
    
-    # Generate dummy data
-    X, y = make_classification(n_samples=100, n_features=20, random_state=42)
+    X, y = make_classification(n_samples=1000, n_features=10, random_state=42)
     
-    # Call the train_model function
     model = train_model(X, y)
     
-    # Assert that the returned object is of type LogisticRegression (or any other expected type)
     self.assertIsInstance(model, LogisticRegression)
 
 if __name__ == '__main__':
@@ -32,12 +29,10 @@ def test_two():
     """
     # add description for the second test
     """
-    X, y = make_classification(n_samples=100, n_features=20, random_state=42)
+    X, y = make_classification(n_samples=1000, n_features=10, random_state=42)
         
-    # Call the train_model function
     model = train_model(X, y)
     
-    # Check if the model uses Logistic Regression algorithm
     self.assertTrue(isinstance(model, LogisticRegression))
     pass
 
@@ -47,7 +42,7 @@ def test_three():
     """
     # add description for the third test
     """
-    # Example ground truth labels and predictions
+
     y_true = [0, 1, 1, 0, 1, 0, 1, 0, 1, 1]
     y_pred = [0, 1, 1, 0, 1, 0, 0, 0, 1, 1]  # One false negative, one false positive
     
