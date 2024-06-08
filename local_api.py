@@ -31,7 +31,7 @@ data = {
 }
 
 # send a POST using the data above
-r = requests.post(json=data)
+r = requests.post(url, json=data)
 
 
 # print the status code
