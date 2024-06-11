@@ -47,15 +47,15 @@ def test_three():
     y_pred = [0, 1, 1, 0, 1, 0, 0, 0, 1, 1]  # One false negative, one false positive
     
     # Expected values for precision, recall, and F1-score
-    expected_precision = 0.7285
-    expected_recall = 0.2699
-    expected_f1 = 0.3939
+    expected_precision = 0.8333
+    expected_recall = 0.8333
+    expected_f1 = 0.8333
     
     # Call the compute_model_metrics function
     precision, recall, f1 = compute_model_metrics(y_true, y_pred)
     
     # Compare computed metrics with expected values
-    unittest.TestCase().assertAlmostEqual(precision, expected_precision, delta=0.3)
-    unittest.TestCase().assertAlmostEqual(recall, expected_recall, delta=0.3)
-    unittest.TestCase().assertAlmostEqual(f1, expected_f1, delta=0.3)
+    unittest.TestCase().assertAlmostEqual(precision, expected_precision, delta=0.001)
+    unittest.TestCase().assertAlmostEqual(recall, expected_recall, delta=0.001)
+    unittest.TestCase().assertAlmostEqual(f1, expected_f1, delta=0.001)
 pass
