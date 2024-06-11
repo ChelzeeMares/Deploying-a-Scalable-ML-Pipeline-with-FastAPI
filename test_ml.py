@@ -9,9 +9,7 @@ from ml.model import compute_model_metrics
 
 # TODO: implement the first test. Change the function name and input as needed
 def test_one():
-    """
-    # add description for the first test
-    """
+  
    
     X, y = make_classification(n_samples=1000, n_features=10, random_state=42)
     
@@ -26,9 +24,7 @@ if __name__ == '__main__':
 
 # TODO: implement the second test. Change the function name and input as needed
 def test_two():
-    """
-    # add description for the second test
-    """
+
     X, y = make_classification(n_samples=1000, n_features=10, random_state=42)
         
     model = train_model(X, y)
@@ -39,9 +35,7 @@ def test_two():
 
 # TODO: implement the third test. Change the function name and input as needed
 def test_three():
-    """
-    # add description for the third test
-    """
+ 
 
     y_true = [0, 1, 1, 0, 1, 0, 1, 0, 1, 1]
     y_pred = [0, 1, 1, 0, 1, 0, 0, 0, 1, 1]  # One false negative, one false positive
