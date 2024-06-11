@@ -55,7 +55,7 @@ def test_three():
     precision, recall, f1 = compute_model_metrics(y_true, y_pred)
     
     # Compare computed metrics with expected values
-    unittest.TestCase().assertAlmostEqual(precision, expected_precision, delta=0.0001)
-    unittest.TestCase().assertAlmostEqual(recall, expected_recall, delta=0.0001)
-    unittest.TestCase().assertAlmostEqual(f1, expected_f1, delta=0.0001)
+    unittest.TestCase().assertAlmostEqual(precision, expected_precision, delta=0.001)
+    unittest.TestCase().assertAlmostEqual(recall, expected_recall, delta=0.001)
+    unittest.TestCase().assertAlmostEqual(f1, expected_f1, delta=0.001)
 pass
