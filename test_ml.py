@@ -17,7 +17,7 @@ def test_one():
     
     model = train_model(X, y)
     
-    assertIsInstance(model, LogisticRegression)
+    unittest.TestCase().assertIsInstance(model, LogisticRegression)
 
 if __name__ == '__main__':
     unittest.main()
@@ -33,7 +33,7 @@ def test_two():
         
     model = train_model(X, y)
     
-    assertTrue(isinstance(model, LogisticRegression))
+    unittest.TestCase().assertTrue(isinstance(model, LogisticRegression))
     pass
 
 
@@ -55,7 +55,7 @@ def test_three():
     precision, recall, f1 = compute_model_metrics(y_true, y_pred)
     
     # Compare computed metrics with expected values
-    assertAlmostEqual(precision, expected_precision, places=4)
-    assertAlmostEqual(recall, expected_recall, places=4)
-    assertAlmostEqual(f1, expected_f1, places=4)
+    unittest.TestCase().assertAlmostEqual(precision, expected_precision, places=4)
+    unittest.TestCase().assertAlmostEqual(recall, expected_recall, places=4)
+    unittest.TestCase().assertAlmostEqual(f1, expected_f1, places=4)
 pass
