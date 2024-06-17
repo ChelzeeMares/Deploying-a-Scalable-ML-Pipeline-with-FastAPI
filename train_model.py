@@ -103,8 +103,7 @@ for col in cat_features:
             label=label,
             encoder=encoder,
             lb=lb,
-            model=model,
-            training = False
+            model=model
         )
         with open("slice_output.txt", "a") as f:
             print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
