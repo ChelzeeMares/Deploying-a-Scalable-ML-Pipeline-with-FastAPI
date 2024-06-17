@@ -147,8 +147,8 @@ def performance_on_categorical_slice(
         slice_value,
         categorical_features, 
         label,  
-        encoder=encoder, 
-        lb=lb
+        encoder, 
+        lb
     )
    
         
