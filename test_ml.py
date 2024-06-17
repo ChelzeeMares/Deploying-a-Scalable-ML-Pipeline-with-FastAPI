@@ -9,15 +9,16 @@ from ml.model import compute_model_metrics
 #Test train model
 def test_train_model(self):
     model = train_model()
-    self.assertIsInstance(model, LogisticRegression)  # Replace SomeModelClass with the actual model class
+    self.assertIsInstance(model, LogisticRegression)
+
 
 def test_predict(self):
     predictions = predict()
-    self.assertIsInstance(predictions, np.ndarray)  # Assuming predictions are returned as a NumPy array
+    self.assertIsInstance(predictions, np.ndarray)
 
 def test_evaluate_model(self):
     evaluation = evaluate_model()
-    self.assertIsInstance(evaluation, dict)  # Assuming evaluation returns a dictionary
+    self.assertIsInstance(evaluation, dict) 
 
 
 
