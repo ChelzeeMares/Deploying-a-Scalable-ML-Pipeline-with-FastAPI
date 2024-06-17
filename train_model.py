@@ -83,7 +83,7 @@ print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}")
 # DONE
 for col in cat_features:
     # iterate through the unique values in one categorical feature
-    cat_features = "salary"
+    cat_feature = "salary"
     for slicevalue in sorted(test[col].unique()):
         count = test[test[col] == slicevalue].shape[0]
         p, r, fb = performance_on_categorical_slice(
@@ -91,7 +91,7 @@ for col in cat_features:
             column_name=col,
             slice_value=slicevalue,
             categorical_features=cat_features,
-            cat_features=cat_features,# Pass cat_features as an argument
+            cat_feature=cat_feature,# Pass cat_features as an argument
             label= "salary",
             encoder=encoder,
             lb=lb,
