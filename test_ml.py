@@ -22,7 +22,7 @@ def test_inference():
     model = train_model(X_train, y_train)
     preds = inference(model, X_test)
     assert isinstance(preds, np.ndarray)
-    assert Equal(preds.shape, (X_test.shape[0],))
+    assert preds.shape == (len(X_test),)
 
 #Test Three
 
