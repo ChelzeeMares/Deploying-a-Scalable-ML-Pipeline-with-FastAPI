@@ -7,23 +7,23 @@ from ml.model import compute_model_metrics
 
 # Test one
 # Test train model/LogigisticRegression
-def test_train_model(self):
+def test_train_model():
     model = train_model()
-    self.assertIsInstance(model, LogisticRegression)
+    assertIsInstance(model, LogisticRegression)
 
 # Test two
-def test_predict(self):
+def test_predict():
     predictions = predict()
-    self.assertIsInstance(predictions, np.ndarray)
+    assertIsInstance(predictions, np.ndarray)
 
 #Test three
 
 # Precision: 0.7285 | Recall: 0.2699 | F1: 0.3939
 
-def test_three(self):
+def test_three():
     actual_value = 0.7285
     expected_value = 0.7285
-    self.assertAlmostEqual(actual_value, expected_value, places=4)
+    assertAlmostEqual(actual_value, expected_value, places=4)
 
 
 
