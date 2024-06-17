@@ -88,6 +88,6 @@ for cat_feature in categorical_features:
         data=test_data, model=model, encoder=encoder, lb=lb, categorical_features=categorical_features, cat_feature=cat_feature
     )
 
-        with open("slice_output.txt", "a") as f:
-            print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
-            print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)
+with open("slice_output.txt", "a") as f:
+    print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
+    print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)
