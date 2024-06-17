@@ -154,13 +154,11 @@ def performance_on_categorical_slice(
 
     
     X_slice, y_slice, _, _ = process_data(
-        data,
-        column_name,
-        slice_value,
-        categorical_features,
-        label,
-        encoder,
-        lb,
+        X_slice,
+        y_slice, 
+        categorical_features=[column_name],
+        label=label,
+        training=False
     )
        
     preds = model.predict(X_slice)
