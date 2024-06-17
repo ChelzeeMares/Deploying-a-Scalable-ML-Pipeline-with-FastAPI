@@ -138,24 +138,16 @@ def performance_on_categorical_slice(
     """
 
     
-    slices = data[categorical_features].apply(lambda x: tuple(x), axis=1).unique()
-    
-
-    X_slice, y_slice, _, _ = process_data(
-        data,
-        categorical_features, 
-        label,  
-        encoder, 
-        lb,
-        model
-    )
-   
-        
-      
-
-    preds = model_inference(X_slice)
-    precision, recall, fbeta = compute_model_metrics(y_slice, preds)
-    return precision, recall, fbeta
+    slices = data[cat_feature].unique()
+    for slice_value in slices:
+        data_slice = data[data[cat_feature] == slice_value]
+        X_slice, y_slice, _, _ = process_data(
+            data_slice, categorical_features=categorical_features, label="salary", training=False, encoder=encoder, lb=lb
+        )
+        # Compute performance metrics for the slice
+        preds = model_inference(model, X_slice)
+        precision, recall, fbeta = compute_model_metrics(y_slice, preds)
+        print(f"Performance for {cat_feature} = {slice_value}: Precision: {precision}, Recall: {recall}, F1: {fbeta}")
 
 
 
