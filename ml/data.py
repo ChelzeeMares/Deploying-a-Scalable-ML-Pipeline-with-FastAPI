@@ -67,12 +67,11 @@ def process_data(
             pass
 
     columns_to_drop = categorical_features + [label]
-    if all(col in X.columns for col in columns_to_drop):
-        X = X.drop(columns_to_drop, axis=1)
+    if all(col in data.columns for col in columns_to_drop):
+        X = data.drop(columns_to_drop, axis=1)
     else:
         raise KeyError(f"Columns {columns_to_drop} not found in DataFrame")
 
-    X = np.concatenate([X_continuous, X_categorical], axis=1)
     return X, y, encoder, lb
 
 def apply_label(inference):
