@@ -8,48 +8,16 @@ from ml.model import compute_model_metrics
 # TODO: add necessary import
 
 # TODO: implement the first test. Change the function name and input as needed
-def test_one():
-  
-   
-    X, y = make_classification(n_samples=1000, n_features=10, random_state=42)
-    
-    model = train_model(X, y)
-    
-    unittest.TestCase().assertIsInstance(model, LogisticRegression)
-
-if __name__ == '__main__':
-    unittest.main()
-    pass
+def test_train_model(self):
+    model = train_model()
+    self.assertIsInstance(model, LogisticRegression)
 
 
 # TODO: implement the second test. Change the function name and input as needed
-def test_two():
+def test_predict(self):
+    predictions = predict()
+    self.assertIsInstance(predictions, np.ndarray)
 
-    X, y = make_classification(n_samples=1000, n_features=10, random_state=42)
-        
-    model = train_model(X, y)
-    
-    unittest.TestCase().assertTrue(isinstance(model, LogisticRegression))
-    pass
-
-
-# TODO: implement the third test. Change the function name and input as needed
-def test_three():
- 
-
-    y_true = [0, 1, 1, 0, 1, 0, 1, 0, 1, 1]
-    y_pred = [0, 1, 1, 0, 1, 0, 0, 0, 1, 1]  # One false negative, one false positive
-    
-    # Expected values for precision, recall, and F1-score
-    expected_precision = 0.8333
-    expected_recall = 0.8333
-    expected_f1 = 0.8333
-    
-    # Call the compute_model_metrics function
-    precision, recall, f1 = compute_model_metrics(y_true, y_pred)
-    
-    # Compare computed metrics with expected values
-    unittest.TestCase().assertAlmostEqual(precision, expected_precision, delta=1)
-    unittest.TestCase().assertAlmostEqual(recall, expected_recall, delta=1)
-    unittest.TestCase().assertAlmostEqual(f1, expected_f1, delta=1)
-pass
+def test_evaluate_model(self):
+    evaluation = evaluate_model()
+    self.assertIsInstance(evaluation, dict) 
