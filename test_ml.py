@@ -7,18 +7,18 @@ from ml.model import compute_model_metrics
 
 #Test One
 #Test train model
-def test_train_model(self):
+def test_train_model():
     model = train_model()
-    self.assertIsInstance(model, LogisticRegression)
+    assertIsInstance(model, LogisticRegression)
 
 
-def test_predict(self):
+def test_predict():
     predictions = predict()
-    self.assertIsInstance(predictions, np.ndarray)
+    assertIsInstance(predictions, np.ndarray)
 
-def test_evaluate_model(self):
+def test_evaluate_model():
     evaluation = evaluate_model()
-    self.assertIsInstance(evaluation, dict) 
+    assertIsInstance(evaluation, dict) 
 
 
 
