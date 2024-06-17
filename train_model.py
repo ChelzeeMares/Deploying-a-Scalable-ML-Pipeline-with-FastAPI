@@ -12,9 +12,6 @@ from ml.model import (
     save_model,
     train_model,
 )
-
-from sklearn.linear_model import LogisticRegression
-model = LogisticRegression()
 # Load census.csv data
 # DONE
 project_path = "Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
@@ -42,7 +39,7 @@ cat_features = [
 # DONE
 X_train, y_train, encoder, lb = process_data(
     train,
-    label="salary",
+    label=  'salary',
     categorical_features=cat_features,
     training= True
     )
@@ -50,7 +47,7 @@ X_train, y_train, encoder, lb = process_data(
 X_test, y_test, _, _ = process_data(
     test,
     categorical_features=cat_features,
-    label="salary",
+    label='salary',
     training=False,
     encoder=encoder,
     lb=lb,
@@ -81,13 +78,20 @@ print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}")
 # Compute the performance on model slices using the performance_on_categorical_slice function
 # iterate through the categorical features
 # DONE
-
-for cat_feature in cat_features:
-    print(f"Evaluating performance on slices for feature: {cat_feature}")
-    performance_on_categorical_slice(
-        data=data, model=model, encoder=encoder, lb=lb, categorical_features=cat_features, cat_feature=cat_feature
-    )
-
-with open("slice_output.txt", "a") as f:
-    print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
-    print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)
+for col in cat_features:
+    # iterate through the unique values in one categorical feature
+    for slicevalue in sorted(test[col].unique()):
+        count = test[test[col] == slicevalue].shape[0]
+        p, r, fb = performance_on_categorical_slice(
+            data=test,
+            column_name=col,
+            slice_value=slicevalue,
+            categorical_features=cat_features,  # Pass cat_features as an argument
+            label='salary',
+            encoder=encoder,
+            lb=lb,
+            model=model
+        )
+        with open("slice_output.txt", "a") as f:
+            print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
+            print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)
