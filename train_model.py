@@ -13,7 +13,7 @@ from ml.model import (
     train_model,
 )
 
-import from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression
 
 # Load census.csv data
 # DONE
