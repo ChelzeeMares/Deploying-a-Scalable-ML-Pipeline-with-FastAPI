@@ -11,7 +11,7 @@ def test_train_model():
     X_train = [[1, 2], [3, 4], [5, 6]]
     y_train = [0, 1, 0]
     model = train_model(X_train, y_train)
-    assert IsInstance(model, LogisticRegression)
+    assertIsInstance(model, LogisticRegression)
 
 
 
