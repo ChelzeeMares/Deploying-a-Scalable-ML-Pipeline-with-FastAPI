@@ -146,7 +146,7 @@ def performance_on_categorical_slice(
         column_name,
         slice_value,
         categorical_features, 
-        label=label, 
+        label, 
         training=False, 
         encoder=encoder, 
         lb=lb
