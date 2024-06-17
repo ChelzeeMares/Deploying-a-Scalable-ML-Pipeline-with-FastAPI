@@ -154,7 +154,7 @@ def performance_on_categorical_slice(
         encoder=encoder,
         lb=lb,
         training = False,
-        model = model
+        model = LogisticRegression()
     )
        
     preds = model.predict(X_slice)
