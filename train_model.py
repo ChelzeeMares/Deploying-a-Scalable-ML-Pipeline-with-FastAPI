@@ -90,7 +90,8 @@ for col in cat_features:
             data=test,
             column_name=col,
             slice_value=slicevalue,
-            categorical_features=cat_features,  # Pass cat_features as an argument
+            categorical_features=categorical_features,
+            cat_features=cat_features,# Pass cat_features as an argument
             label= "salary",
             encoder=encoder,
             lb=lb,
