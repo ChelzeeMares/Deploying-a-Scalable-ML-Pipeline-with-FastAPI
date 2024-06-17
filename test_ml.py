@@ -7,9 +7,9 @@ from ml.model import compute_model_metrics
 
 # Test one
 # Test train model/LogigisticRegression
-def test_train_model():
+def test_train_model(self):
     model = train_model()
-    assertIsInstance(model, LogisticRegression)
+    self.assertIsInstance(model, LogisticRegression)
 
 # Test two
 def test_predict():
