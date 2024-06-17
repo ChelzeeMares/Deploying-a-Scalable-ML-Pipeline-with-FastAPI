@@ -151,7 +151,6 @@ def performance_on_categorical_slice(
         "capital-loss",
         "hours-per-week",
         "native-country",
-        "salary",
     ]
     
     X_slice, y_slice, _, _ = process_data(
