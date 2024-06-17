@@ -136,6 +136,8 @@ def performance_on_categorical_slice(
     Done
 
     """
+
+    data = data[data[column_name] == slice_value]
     
     X_slice, y_slice, _, _ = process_data(
         data,
@@ -151,3 +153,6 @@ def performance_on_categorical_slice(
     preds = model.predict(X_slice)
     precision, recall, fbeta = compute_model_metrics(y_slice, preds)
     return precision, recall, fbeta
+
+
+
