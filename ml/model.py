@@ -99,7 +99,7 @@ def load_model(path):
 
 
 def performance_on_categorical_slice(
-    data, column_name, slice_value, categorical_features, label, encoder, lb, model
+    data, column_name, slice_value, categorical_features, label, encoder, lb, model, cat_feature
 ):
     """ Computes the model metrics on a slice of the data specified by a column name and
 
