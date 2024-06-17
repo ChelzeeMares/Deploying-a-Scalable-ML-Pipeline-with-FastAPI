@@ -54,7 +54,6 @@ X_test, y_test, _, _ = process_data(
     training=False,
     encoder=encoder,
     lb=lb,
-    model = model
 )
 # Use the train_model function to train the model on the training dataset
 # DONE
