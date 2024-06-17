@@ -157,7 +157,7 @@ def performance_on_categorical_slice(
         X_slice,
         y_slice, 
         categorical_features,
-        label=label,
+        label,
         training=False
     )
        
