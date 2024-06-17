@@ -142,7 +142,7 @@ def performance_on_categorical_slice(
     for slice_value in slices:
         data_slice = data[data[cat_feature] == slice_value]
         X_slice, y_slice, _, _ = process_data(
-            data_slice, categorical_features=categorical_features, label="salary", training=False, encoder=encoder, lb=lb, cat_feature=cat_feature
+            data_slice, categorical_features=categorical_features, label="salary", training=False, encoder=encoder, lb=lb,
         )
         # Compute performance metrics for the slice
         preds = model_inference(model, X_slice)
