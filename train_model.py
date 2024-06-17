@@ -51,7 +51,7 @@ X_test, y_test, _, _ = process_data(
     test,
     categorical_features=cat_features,
     label='salary',
-    training=False,
+    training,
     encoder=encoder,
     lb=lb,
 )
