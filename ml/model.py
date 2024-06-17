@@ -136,22 +136,12 @@ def performance_on_categorical_slice(
     Done
 
     """
-    cat_features = [
-    "workclass",
-    "education",
-    "marital-status",
-    "occupation",
-    "relationship",
-    "race",
-    "sex",
-    "native-country",
-]
     
     X_slice, y_slice, _, _ = process_data(
         data,
         column_name,
         slice_value,
-        categorical_features=cat_features,
+        categorical_features,
         label=label,
         encoder=encoder,
         lb=lb,
