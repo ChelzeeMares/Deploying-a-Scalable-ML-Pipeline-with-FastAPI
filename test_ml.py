@@ -18,6 +18,7 @@ def test_train_model():
 def test_inference():
     X_train = [[1, 2], [3, 4], [5, 6]]
     y_train = [0, 1, 0]
+    X_test = [[7, 8], [9, 10]]
     model = train_model(X_train, y_train)
     preds = inference(model, X_test)
     assert isinstance(preds, np.ndarray)
