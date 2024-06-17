@@ -57,21 +57,15 @@ async def post_inference(data: Data):
     data = pd.DataFrame.from_dict(data)
 
      cat_features = [
-        "age",
-        "workclass",
-        "fnlgt",
-        "education",
-        "education-num",
-        "marital-status",
-        "occupation",
-        "relationship",
-        "race",
-        "sex",
-        "capital-gain",
-        "capital-loss",
-        "hours-per-week",
-        "native-country",
-    ]
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
 
     data_processed, _, _, _ = process_data(
         data,
