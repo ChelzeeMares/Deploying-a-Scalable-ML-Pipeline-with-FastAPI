@@ -43,29 +43,31 @@ def process_data(
         Trained LabelBinarizer if training is True, otherwise returns the binarizer
         passed in.
     """
+   
     if label is not None:
         y = X[label]
-        X = X.drop([label], axis=1)
+        X = X.drop(columns=[label])
     else:
-        y = np.array([])
+        y = None
 
-    X_categorical = X[categorical_features].values
-    X_continuous = X.drop(*[categorical_features], axis=1)
+    X_categorical = X[categorical_features].copy()
+    X_continuous = X.drop(columns=categorical_features)
 
-    if training is True:
-        encoder = OneHotEncoder(sparse=False, handle_unknown="ignore")
-        lb = LabelBinarizer()
+    if training:
+        encoder = OneHotEncoder(sparse=False, handle_unknown='ignore')
         X_categorical = encoder.fit_transform(X_categorical)
-        y = lb.fit_transform(y.values).ravel()
     else:
         X_categorical = encoder.transform(X_categorical)
-        try:
-            y = lb.transform(y.values).ravel()
-        # Catch the case where y is None because we're doing inference.
-        except AttributeError:
-            pass
 
     X = np.concatenate([X_continuous, X_categorical], axis=1)
+
+    if label is not None:
+        if training:
+            lb = LabelBinarizer()
+            y = lb.fit_transform(y.values).ravel()
+        else:
+            y = lb.transform(y.values).ravel()
+
     return X, y, encoder, lb
 
 def apply_label(inference):
