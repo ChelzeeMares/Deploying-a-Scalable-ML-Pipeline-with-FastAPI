@@ -19,9 +19,9 @@ def test_inference():
     X_train = [[1, 2], [3, 4], [5, 6]]
     y_train = [0, 1, 0]
     model = train_model(X_train, y_train)
-    preds = inference(model, self.X_test)
+    preds = inference(model, X_test)
     assert isinstance(preds, np.ndarray)
-    assert Equal(preds.shape, (self.X_test.shape[0],))
+    assert Equal(preds.shape, (X_test.shape[0],))
 
 #Test Three
 
