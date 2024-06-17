@@ -14,7 +14,7 @@ from ml.model import (
 )
 
 from sklearn.linear_model import LogisticRegression
-
+model = LogisticRegression()
 # Load census.csv data
 # DONE
 project_path = "Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
