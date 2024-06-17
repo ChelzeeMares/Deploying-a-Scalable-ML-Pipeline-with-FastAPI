@@ -137,21 +137,15 @@ def performance_on_categorical_slice(
 
     """
     cat_features = [
-        "age",
-        "workclass",
-        "fnlgt",
-        "education",
-        "education-num",
-        "marital-status",
-        "occupation",
-        "relationship",
-        "race",
-        "sex",
-        "capital-gain",
-        "capital-loss",
-        "hours-per-week",
-        "native-country",
-    ]
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
     
     X_slice, y_slice, _, _ = process_data(
         data,
