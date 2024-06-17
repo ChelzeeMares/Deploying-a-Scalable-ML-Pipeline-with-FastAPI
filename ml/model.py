@@ -138,9 +138,9 @@ def performance_on_categorical_slice(
     """
 
     
-    slices = data[cat_features].unique()
+    slices = data[categorical_features].unique()
     for slice_value in slices:
-        data_slice = data[data[cat_features] == slice_value]
+        data_slice = data[data[categorical_features] == slice_value]
         X_slice, y_slice, _, _ = process_data(
             data_slice, 
             categorical_features=cat_features, 
