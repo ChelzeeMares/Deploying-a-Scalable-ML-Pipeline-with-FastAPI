@@ -99,7 +99,7 @@ def load_model(path):
 
 
 def performance_on_categorical_slice(
-    data, column_name, slice_value, categorical_features, label, encoder, lb, model, cat_feature
+    data, column_name, slice_value, categorical_features, label, encoder, lb, model
 ):
     """ Computes the model metrics on a slice of the data specified by a column name and
 
@@ -136,18 +136,26 @@ def performance_on_categorical_slice(
     Done
 
     """
-
+    cat_features = [
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
+    ]
     
-    slices = data[cat_feature].unique()
-    for slice_value in slices:
-        data_slice = data[data[cat_feature] == slice_value]
-        X_slice, y_slice, _, _ = process_data(
-            data_slice, categorical_features=categorical_features, label="salary", training=False, encoder=encoder, lb=lb,
-        )
-        # Compute performance metrics for the slice
-        preds = model_inference(model, X_slice)
-        precision, recall, fbeta = compute_model_metrics(y_slice, preds)
-        print(f"Performance for {cat_feature} = {slice_value}: Precision: {precision}, Recall: {recall}, F1: {fbeta}")
-
-
-
+    X_slice, y_slice, _, _ = process_data(
+        data,
+        categorical_features=cat_features,
+        label=label,
+        encoder=encoder,
+        lb=lb,
+        training = False
+    )
+       
+    preds = model.predict(X_slice)
+    precision, recall, fbeta = compute_model_metrics(y_slice, preds)
+    return precision, recall, fbeta
