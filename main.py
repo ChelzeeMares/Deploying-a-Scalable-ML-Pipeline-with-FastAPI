@@ -56,16 +56,23 @@ async def post_inference(data: Data):
     data = {k.replace("_", "-"): [v] for k, v in data_dict.items()}
     data = pd.DataFrame.from_dict(data)
 
-    cat_features = [
+     cat_features = [
+        "age",
         "workclass",
+        "fnlgt",
         "education",
+        "education-num",
         "marital-status",
         "occupation",
         "relationship",
         "race",
         "sex",
+        "capital-gain",
+        "capital-loss",
+        "hours-per-week",
         "native-country",
     ]
+
     data_processed, _, _, _ = process_data(
         data,
         categorical_features=cat_features,
