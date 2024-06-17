@@ -138,17 +138,19 @@ def performance_on_categorical_slice(
     """
 
     
-    slices = data[categorical_features].unique()
-    for slice_value in slices:
-        data_slice = data[data[categorical_features] == slice_value]
-        X_slice, y_slice, _, _ = process_data(
-            data_slice, 
-            categorical_features=categorical_features, 
-            label="salary", 
-            training=False, 
-            encoder=encoder, 
-            lb=lb
-        )
+    slices = data[categorical_features].apply(lambda x: tuple(x), axis=1).unique()
+    
+
+    X_slice, y_slice, _, _ = process_data(
+        data,
+        column_name,
+        slice_value,
+        categorical_features, 
+        label=label, 
+        training=False, 
+        encoder=encoder, 
+        lb=lb
+    )
    
         
       
