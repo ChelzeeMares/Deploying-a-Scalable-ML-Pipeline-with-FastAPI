@@ -161,7 +161,7 @@ def performance_on_categorical_slice(
         label,
         encoder,
         lb,
-        training
+        training = False
     )
        
     preds = model.predict(X_slice)
