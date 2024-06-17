@@ -136,16 +136,11 @@ def performance_on_categorical_slice(
     Done
 
     """
-    cat_features = [
-        "workclass",
-        "education",
-        "marital-status",
-        "occupation",
-        "relationship",
-        "race",
-        "sex",
-        "native-country",
-    ]
+    slice_data = data[data[column_name] == slice_value]
+
+    X_slice - slice_data.drop(columns=[label])
+    y_slice = slice_data[label]
+
     
     X_slice, y_slice, _, _ = process_data(
         data,
