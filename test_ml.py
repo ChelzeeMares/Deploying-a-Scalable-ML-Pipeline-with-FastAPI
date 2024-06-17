@@ -14,7 +14,7 @@ def test_train_model():
     assert isinstance(model, LogisticRegression)
 
 #Test Two
-
+#Test Inference
 def test_inference():
     X_train = [[1, 2], [3, 4], [5, 6]]
     y_train = [0, 1, 0]
@@ -25,7 +25,7 @@ def test_inference():
     assert preds.shape == (len(X_test),)
 
 #Test Three
-
+#Test compute_model_metrics
 def test_compute_model_metrics():
  
     y_true = [0, 1, 1, 0, 1, 0, 1, 0, 1, 1]
