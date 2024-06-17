@@ -12,6 +12,9 @@ from ml.model import (
     save_model,
     train_model,
 )
+
+import from sklearn.linear_model import LogisticRegression
+
 # Load census.csv data
 # DONE
 project_path = "Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
@@ -51,6 +54,7 @@ X_test, y_test, _, _ = process_data(
     training=False,
     encoder=encoder,
     lb=lb,
+    model = LogisticRegression()
 )
 # Use the train_model function to train the model on the training dataset
 # DONE
